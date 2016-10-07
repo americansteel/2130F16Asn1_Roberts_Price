@@ -9,7 +9,7 @@ import java.util.Scanner;
 
 /**
  *
- * @author Sean
+ * @author Sean 
  */
 public class Dylan_Sean_Passenger {
 
@@ -47,6 +47,7 @@ public class Dylan_Sean_Passenger {
     
 /*****
 * Get and Set for each   
+* @return //I don't know why I have this return tag, but Netbeans insisted I need it.
 ******/
     public String getFName(){
         return firstName;
@@ -70,6 +71,12 @@ public class Dylan_Sean_Passenger {
     
     public void setAge(int age){
         passengerAge = age;
+    }
+    
+    @Override
+    public String toString(){
+        return "Name: "+ firstName + " " + lastName+
+                "\n Age: " + passengerAge;
     }
     
     
