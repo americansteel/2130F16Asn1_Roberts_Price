@@ -10,18 +10,20 @@ import java.util.Scanner;
 /**
  *
  * @author Sean 
- */
+**/
 public class Dylan_Sean_Passenger {
 
-// Initialize variables. Need to be public in order to be read by the subclass
+// Initialize variables. 
     java.util.Scanner input = new Scanner(System.in);
-    public String firstName;
-    public String lastName;
-    public int passengerAge;
+    protected String firstName;
+    protected String lastName;
+    protected int passengerAge;
  
-/*****
-* Constructors
-******/
+/*
+***********
+    Constructors
+***********
+*/
     
 // Default constructor    
     public Dylan_Sean_Passenger(){
@@ -29,26 +31,20 @@ public class Dylan_Sean_Passenger {
         passengerAge=0;
     }
     
-// First, Last, Age
+// Full
     public Dylan_Sean_Passenger(String fName, String lName, int pAge){
         firstName = fName;
         lastName = lName;
         passengerAge = pAge;
     }
-// First, Last 
-    public Dylan_Sean_Passenger(String fName, String lName){
-        firstName = fName;
-        lastName = lName;
-    }
-// First Only   
-    public Dylan_Sean_Passenger(String fName){
-        firstName = fName;
-    }
     
-/*****
-* Get and Set for each   
-* @return //I don't know why I have this return tag, but Netbeans insisted I need it.
-******/
+/*
+***********
+    Get and Set 
+***********
+*/
+    
+//  First Name
     public String getFName(){
         return firstName;
     }
@@ -56,7 +52,7 @@ public class Dylan_Sean_Passenger {
     public void setFName(String fName){
         firstName = fName;
     }
-    
+//  Last Name
     public String getLName(){
         return lastName;
     }
@@ -64,7 +60,7 @@ public class Dylan_Sean_Passenger {
     public void setLName(String lName){
         lastName = lName;
     }
-    
+//  Passenger Age
     public int getAge(){
         return passengerAge;
     }
@@ -73,10 +69,39 @@ public class Dylan_Sean_Passenger {
         passengerAge = age;
     }
     
+/*
+***********
+    Methods
+***********
+*/
+    
+//  toString
     @Override
     public String toString(){
-        return "Name: "+ firstName + " " + lastName+
-                "\n Age: " + passengerAge;
+        return "\nName: "+ firstName + " " + lastName+
+                "\nAge: " + passengerAge;
+    }
+
+//  name validation- MOVE TO MAIN 
+    public String getValidName(){
+        String result;
+        result = input.nextLine();
+        while (result.length()<2){
+            System.out.println("\nThat is incorrect. Please enter a valid name.");
+            result = input.nextLine();
+        }
+        return result;
+    }
+    
+//  Age validation - MOVE TO MAIN
+    public int getValidAge(){
+        int result;
+        result = input.nextInt();
+        while (result < 1 || result > 110){
+            System.out.println("That is incorrect. Please enter a valid age.");
+            result =input.nextInt();
+        }
+        return result;
     }
     
     
