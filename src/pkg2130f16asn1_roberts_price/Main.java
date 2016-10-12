@@ -4,8 +4,6 @@
  * and open the template in the editor.
  */
 package pkg2130f16asn1_roberts_price;
-
-import java.text.DecimalFormat;
 import java.text.SimpleDateFormat;
 import java.util.Scanner;
 import java.text.ParseException;
@@ -34,14 +32,15 @@ public class Main {
         double flightFare;
         String firstName, lastName;
         int age, flyerNumber, flyerMiles;
-        
+
         //Declaring object names
         Dylan_Sean_Flight flight;
         Dylan_Sean_Passenger passenger;
         Dylan_Sean_FrequentFlyer frequentFlyer;
-        
+
         //Build main object and run methods to build Flight object
         Main thisObj = new Main();
+        thisObj.printLogo();
         flightNumber = thisObj.validateFlightNumber();
         flightSource = thisObj.validateFlightSource();
         flightDestination = thisObj.validateFlightDestination();
@@ -71,19 +70,21 @@ public class Main {
                 ffCheck = true;
             }
         }
-        
-        
+
         if ("Y".equals(ffYN)) {
             flyerNumber = thisObj.getValidFlyerNumber();
             flyerMiles = thisObj.getValidFlyerMiles();
             frequentFlyer = new Dylan_Sean_FrequentFlyer(flyerMiles, flyerNumber, firstName, lastName, age);
-            System.out.println(flight.toString());
+            thisObj.printLogo();
             System.out.println(frequentFlyer.toString());
+            System.out.println(flight.toString());
         }
         if (ffYN.equals("N")) {
             passenger = new Dylan_Sean_Passenger(firstName, lastName, age);
-            System.out.println(flight.toString());
+            thisObj.printLogo();
             System.out.println(passenger.toString());
+            System.out.println(flight.toString());
+
         }
     }
     //Validation method for flight number
@@ -169,7 +170,6 @@ public class Main {
 
                 }
             } catch (ParseException ex) {
-                // ex.printStackTrace();
                 date = "";
 
             }
@@ -177,6 +177,7 @@ public class Main {
         return date;
     }
 //  name validation
+
     public String getValidName() {
         String result;
         result = input.nextLine();
@@ -223,5 +224,57 @@ public class Main {
             result = input.nextInt();
         }
         return result;
+    }
+
+// Logo
+    public void printLogo() {
+        System.out.println("***************************************************");
+        System.out.println("*               DDD            SSSSS              *");
+        System.out.println("*               D  D          S                   *");
+        System.out.println("*               D   D          SSSSS              *");
+        System.out.println("*               D   D               S             *");
+        System.out.println("*               D  D                S             *");
+        System.out.println("*               DD             SSSSS              *");
+        System.out.println("*                                                 *");
+        System.out.println("*  FFFFF L      I  GGGGGG  H   H  TTTTTTT   SSSSS *");
+        System.out.println("*  F     L      I  G       H   H     T     S      *");
+        System.out.println("*  FFF   L      I  G  GGG  HHHHH     T      SSSS  *");
+        System.out.println("*  F     L      I  G  G G  H   H     T          S *");
+        System.out.println("*  F     L      I  G    G  H   H     T          S *");
+        System.out.println("*  F     LLLLL  I  GGGGGG  H   H     T     SSSSS  *");
+        System.out.println("***************************************************");
+        System.out.println("\n________________________¶\n"
+                + "______________________¶¶¶\n"
+                + "___________________¶¶¶¶¶\n"
+                + "__________________¶¶¶¶¶¶\n"
+                + "________________¶¶¶¶¶¶¶\n"
+                + "_______________¶¶¶¶¶¶¶¶\n"
+                + "_______________¶¶¶¶¶¶¶¶\n"
+                + "______________¶¶¶¶¶¶¶¶¶¶\n"
+                + "______________¶¶¶¶¶¶¶¶¶¶_________________¶\n"
+                + "______________¶¶¶¶¶¶¶¶¶¶¶______________¶¶¶\n"
+                + "______________¶¶¶¶¶¶¶¶¶¶¶¶___________¶¶¶¶\n"
+                + "_______¶______¶¶¶¶¶¶¶¶¶¶¶¶¶________¶¶¶¶¶¶\n"
+                + "_______¶¶¶¶____¶¶¶¶¶¶¶¶¶¶¶¶¶______¶¶¶¶¶¶¶\n"
+                + "_______¶¶¶¶¶___¶¶¶¶¶¶¶¶¶¶¶¶¶¶____¶¶¶¶¶¶¶¶\n"
+                + "_______¶¶¶¶¶¶___¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶__¶¶¶¶¶¶¶¶\n"
+                + "_______¶¶¶¶¶¶¶__¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶\n"
+                + "_______¶¶¶¶¶¶¶__¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶\n"
+                + "______¶¶¶¶¶¶¶¶__¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶\n"
+                + "_____¶¶¶¶¶¶¶¶¶_¶¶¶¶¶¶¶¶¶¶__¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶\n"
+                + "___¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶___¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶\n"
+                + "__¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶___¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶\n"
+                + "__¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶____¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶\n"
+                + "_¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶_¶¶¶¶¶¶____¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶\n"
+                + "_¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶__¶¶¶______¶¶¶_¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶\n"
+                + "_¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶___¶________¶¶__¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶\n"
+                + "_¶¶¶¶¶¶¶¶¶¶¶¶¶¶_____________¶¶__¶¶¶¶¶¶¶¶¶¶¶¶¶¶\n"
+                + "_¶¶¶¶¶¶¶¶¶¶¶¶¶¶______________¶____¶¶¶¶¶¶¶¶¶¶¶\n"
+                + "__¶¶¶¶¶¶¶¶¶¶¶¶_____________________¶¶¶¶¶¶¶¶¶\n"
+                + "____¶¶¶¶¶¶¶¶¶¶_____________________¶¶¶¶¶¶¶¶\n"
+                + "______¶¶¶¶¶¶¶¶_____________________¶¶¶¶¶¶\n"
+                + "_________¶¶¶¶¶¶___________________¶¶¶¶\n"
+                + "_____________¶¶¶¶¶______________¶\n\n\n");
+
     }
 }
