@@ -66,28 +66,4 @@ public class Dylan_Sean_FrequentFlyer extends Dylan_Sean_Passenger {
         return super.toString() +"\nFrequent Flyer Number: "+ flyerNumber+
                                  "\nFrequent Flyer Miles: "+ flyerMiles+" miles";
     }
-    
-//  Validate Flyer Number - MOVE TO MAIN
-//  While condition temporarily turns the int into a string so I can use the string length method.
-    public int getValidFlyerNumber(){
-        int result;
-        result = input.nextInt();
-        while (String.valueOf(result).length() != 10){
-            System.out.println("\nThat is incorrect. Please enter your 10-digit Frequent Flyer Number.");
-            result = input.nextInt();
-        }
-        return result;
-    }
-
-//  Validate Flyer Miles - MOVE TO MAIN
-    public int getValidFlyerMiles(){
-        int result;
-        result = input.nextInt();
-        while (result < 1){
-            System.out.println("\nThat is incorrect. Please enter a valid amount of miles.");
-            result = input.nextInt();
-        }
-        return result;
-    }
-
 }

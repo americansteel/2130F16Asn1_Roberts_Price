@@ -81,28 +81,4 @@ public class Dylan_Sean_Passenger {
         return "\nName: "+ firstName + " " + lastName+
                 "\nAge: " + passengerAge;
     }
-
-//  name validation- MOVE TO MAIN 
-    public String getValidName(){
-        String result;
-        result = input.nextLine();
-        while (result.length()<2){
-            System.out.println("\nThat is incorrect. Please enter a valid name.");
-            result = input.nextLine();
-        }
-        return result;
-    }
-    
-//  Age validation - MOVE TO MAIN
-    public int getValidAge(){
-        int result;
-        result = input.nextInt();
-        while (result < 1 || result > 110){
-            System.out.println("That is incorrect. Please enter a valid age.");
-            result =input.nextInt();
-        }
-        return result;
-    }
-    
-    
 }

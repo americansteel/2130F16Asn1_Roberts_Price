@@ -24,6 +24,7 @@ public class Dylan_Sean_Flight {
     private String strSubtotal;
     private double total;
     private String strTotal;
+    private String logo;
 
 //Default Constructor
     public Dylan_Sean_Flight() {
