@@ -33,7 +33,6 @@ public class Dylan_Sean_Flight {
         flightNumber = "";
         flightSource = "";
         flightDestination = "";
-        //Format needs to be determined
         travelDate = "";
         flightFare = 0;
     }    
